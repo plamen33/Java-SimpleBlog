@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: site-head">
+    <title>Post Details</title>
+</head>
+
+<body>
+<header th:replace="layout :: site-header" />
+<form method="post" th:action="@{/posts/create}">
+<main id="posts">
+    <article>
+        <div><label for="title">Title:</label></div>
+        <textarea id="title" name="title"></textarea>
+        <div><label for="title">Content:</label></div>
+        <textarea id="body" name="body"></textarea>
+    </article>
+</main>
+    <div><input type="submit" value="Create"/></div>
+</form>
+<footer th:replace="layout :: site-footer" />
+</body>
+
+</html>

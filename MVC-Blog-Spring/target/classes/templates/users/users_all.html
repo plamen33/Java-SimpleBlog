@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: site-head">
+    <title>Post Details</title>
+</head>
+
+<body>
+<header th:replace="layout :: site-header" />
+
+<main id="users">
+    <article th:each="user : ${usersall}">
+        <span th:text="${user.username}"> Username </span>
+        <span th:text="${user.getFullName()}"> FullName </span>
+     </article>
+</main>
+
+<footer th:replace="layout :: site-footer" />
+</body>
+
+</html>
