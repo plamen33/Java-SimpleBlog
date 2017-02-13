@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: site-head">
+    <title>ERROR</title>
+    <style>
+        input.MyButton {
+            width: 140px;
+            padding: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 100%;
+            background: #9c7cb5;
+            color: #fff;
+            border: 1px solid #775d8f;
+            border-radius: 10px;
+            -moz-box-shadow: 5px 5px 5px #a3a3a3;
+            -webkit-box-shadow: 5px 5px 5px #a3a3a3;
+            box-shadow: 5px 5px 5px #a3a3a3;
+        }
+        input.MyButton:hover {
+            color: #75549e;
+            background: #caa5e4;
+            border: 1px solid #775d8f;
+            -moz-box-shadow: 7px 7px 7px #bababa;
+            -webkit-box-shadow: 7px 7px 7px #bababa;
+            box-shadow: 7px 7px 7px #bababa;
+        }
+    </style>
+</head>
+
+<body>
+<!--<header th:replace="layout :: site-header" />-->
+<header>
+    <p style="color:#e3750e; font-size:20px"><b>Title must not be less than 3 symbols !</b></p>
+    <p style="color:#ae0000; font-size:20px"><b>Content must not be less than 7 symbols !</b></p>
+
+    <form>
+        <input class="MyButton" type="button" value="Back to create" onclick="window.location.href='/posts/create'" />
+        &nbsp;&nbsp;&nbsp;
+        <input class="MyButton" type="button" value="Back to posts" onclick="window.location.href='/posts'" />
+    </form>
+</header>
+<!--<footer th:replace="layout :: site-footer" />-->
+</body>
+
+</html>
+
+
+<!--<a href="/users/login" th:href="@{users/login}">&nbsp;&nbsp;Login&nbsp;&nbsp;</a>-->
+<!--<h3> </h3>-->
+<!--<form method="posts">-->
+<!--<input type="submit" value="Back"/>-->
+<!--</form>-->

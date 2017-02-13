@@ -72,7 +72,9 @@ public class PostsController {
     }
     @RequestMapping(value ="/posts/edit/{id}", method = RequestMethod.POST)
     public String edit(@Valid EditForm editForm, @PathVariable("id") Long id, Model model) {
-        Post post = postService.findById(id);
+        Object usernameObject = httpSession.getAttribute(USER_LOGIN);
+        if (usernameObject!=null) {
+            Post post = postService.findById(id);
         if (post == null) {
             notifyService.addErrorMessage("Cannot find post #" + id);
             return "redirect:/";
@@ -81,14 +83,20 @@ public class PostsController {
         post.setTitle(editForm.getTitle());
         post.setBody(editForm.getBody());
         postService.edit(post);
-        return "redirect:/posts";
+            return "redirect:/posts";
+        }
+        else{
+            notifyService.addErrorMessage("Please log in to edit posts");
+            return "redirect:/posts";
+        }
+
     }
     @RequestMapping(value ="/posts/create", method = RequestMethod.GET)
     public String createPage(CreateForm createForm) {
            return "posts/create";
     }
     @RequestMapping(value ="/posts/create", method = RequestMethod.POST)
-    public String create(CreateForm createForm) {
+    public String create(@Valid CreateForm createForm) {
         Post post=new Post();
         Object usernameObject = httpSession.getAttribute(USER_LOGIN);
         if (usernameObject!=null)

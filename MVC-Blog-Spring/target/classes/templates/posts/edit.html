@@ -12,7 +12,7 @@
     <article>
         <div class="date">
             <i>Posted on</i>
-            <span th:text="${#dates.format(post.date, 'dd-MMM-yyyy')}">22-May-2016</span>
+            <span th:text="${#dates.format(post.date, 'dd-MMM-yyyy')}">11-02-2017</span>
             <span th:if="${post.author}" th:remove="tag">
                     <i>by</i> <span th:text="${post.author.fullName != null ?
                         post.author.fullName : post.author.username}">Plamen Petkov</span>

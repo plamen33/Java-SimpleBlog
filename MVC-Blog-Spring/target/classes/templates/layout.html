@@ -22,12 +22,12 @@
         <a href="posts/index.html" th:href="@{/posts}">Posts</a>
         <a href="posts/create.html" th:href="@{/posts/create}">Create Post</a>
         <a href="users/index.html" th:href="@{/users}">Users</a>
-        <div id="logged-in-info">
-            <h1 th:if="${session[T(blog.controllers.AccountController).USER_LOGIN]}!=null" th:inline="text">Hello  [[${session[T(blog.controllers.AccountController).USER_LOGIN]}]]!</h1>
-            <form method="post" th:if="${session[T(blog.controllers.AccountController).USER_LOGIN]}!=null" th:action="@{/users/logout}">
-                <input type="submit" value="Logout"/>
-            </form>
-        </div>
+        &nbsp;&nbsp;&nbsp;
+        <a> <p th:if="${session[T(blog.controllers.AccountController).USER_LOGIN]}!=null" th:inline="text" >Logged user:<b>  [[${session[T(blog.controllers.AccountController).USER_LOGIN]}]]</b></p></a>
+        <form  method="post" th:if="${session[T(blog.controllers.AccountController).USER_LOGIN]}!=null" th:action="@{/users/logout}">
+            &nbsp;&nbsp;&nbsp;
+            <input type="submit" value="Logout"/>
+        </form>
     </header>
 
     <ul id="messages" th:with="notifyMessages=${session[T(blog.services
@@ -46,8 +46,10 @@
 <p>Welcome to the Spring MVC Blog.</p>
 
 <footer th:fragment="site-footer">
-    &copy; Spring MVC Blog Project, 2016
+    &copy; Spring MVC Blog Project, 2017
 </footer>
 </body>
 
 </html>
+
+

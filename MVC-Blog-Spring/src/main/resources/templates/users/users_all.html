@@ -3,16 +3,44 @@
 
 <head th:replace="layout :: site-head">
     <title>Post Details</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 77%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
 </head>
 
 <body>
 <header th:replace="layout :: site-header" />
-
+<h3>&nbsp;&nbsp;&nbsp;User List: </h3>
 <main id="users">
-    <article th:each="user : ${usersall}">
-        <span th:text="${user.username}"> Username </span>
-        <span th:text="${user.getFullName()}"> FullName </span>
-     </article>
+    <table class="table table-striped">
+        <tr>
+            <th> Username </th>
+
+            <th> FullName </th>
+        </tr>
+        <th:block th:each="user : ${usersall}">
+            <tr>
+                <td th:text="${user.username}"> Username </td>
+
+                <td th:text="${user.getFullName()}"> FullName </td>
+            </tr>
+        </th:block>
+    </table>
+
 </main>
 
 <footer th:replace="layout :: site-footer" />
