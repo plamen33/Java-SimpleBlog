@@ -20,9 +20,11 @@
                 </span>
         </div>
         <p class="content" th:utext="${post.body}">Post content</p>
+        <span><a th:href="@{/posts/view/{id}/(id=${post.id})}"> Details</a></span>
+        <span>&nbsp;|&nbsp;</span>
+        <span><a th:href="@{/posts/edit/{id}/(id=${post.id})}">Edit </a></span>
+        <span>&nbsp;|&nbsp;</span>
         <span><a th:href="@{/posts/delete/{id}/(id=${post.id})}"> Delete </a></span>
-        <span>|</span>
-        <span><a th:href="@{/posts/edit/{id}/(id=${post.id})}"> Edit </a></span>
      </article>
 </main>
 

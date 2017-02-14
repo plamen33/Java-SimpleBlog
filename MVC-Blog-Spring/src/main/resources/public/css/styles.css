@@ -52,6 +52,10 @@ ul#messages li {
 ul#messages li.info {
     background: #7f7;
 }
+ul#messages li.warning {
+    background: #d59f27;
+    color: white;
+}
 
 ul#messages li.error {
     background: #d00;

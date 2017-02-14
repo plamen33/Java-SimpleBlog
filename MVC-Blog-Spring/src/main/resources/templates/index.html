@@ -14,6 +14,7 @@
        th:href="@{/posts/view/{id}/(id=${p.id})}">Work Begins on HTML5.1</a>
 </aside>
 <main id="posts">
+    <p style="color:#835dae; font-size:24px"><b>Latest Blog posts: </b></p>
     <article th:each="p : ${latest3posts}">
         <h2 class="title" th:text="${p.title}">Post Title</h2>
         <div class="date">

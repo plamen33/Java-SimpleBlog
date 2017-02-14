@@ -4,9 +4,9 @@ package blog.forms;
 import javax.validation.constraints.Size;
 
 public class CreateForm {
-    @Size(min=2, max=100,message="Please enter user between 2 and 100 symbols")
+    @Size(min=3, max=100,message="Please enter title between 3 and 100 symbols")
     private String title;
-    @Size(min=10)
+    @Size(min=7)
     private String body;
 
     public String getTitle() {
