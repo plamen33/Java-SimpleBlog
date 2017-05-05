@@ -3,7 +3,7 @@ Simple Blog build on Java using Spring Framework, based on my study at SoftUni i
 
 1/ Post - Create Edit Delete Details
 
-2/ User - Create; List users
+2/ User - Create, List users
 
 3/ notifications
 
